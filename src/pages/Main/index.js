@@ -21,7 +21,11 @@ export default class Main extends Component {
 
     handleInputChange = (e) => {
         this.setState({ newBox: e.target.value });
-    }
+    };
+
+    handleListBoxes = async e => {
+        this.props.history.push('boxes');
+    };
 
 
   render() {
@@ -31,6 +35,7 @@ export default class Main extends Component {
                 <img src={logo} alt="" />
                 <input placeholder="Criar um box" value={this.state.newBox} onChange={this.handleInputChange}/>
                 <button type="submit">Criar</button>
+                <button type="button" onClick={this.handleListBoxes}>Listar Boxes</button>
             </form>
         </div>
     );
